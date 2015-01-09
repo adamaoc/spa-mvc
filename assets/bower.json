@@ -1,0 +1,6 @@
+{
+  "name": "flexhub",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation"
+  }
+}

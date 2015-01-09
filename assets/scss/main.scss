@@ -1,0 +1,47 @@
+@import "foundation/settings";
+
+// Foundation color overrides //
+$primary-color: #96AB9E;
+// $primary-color: #C9D88C;
+$secondary-color: #6f6f6f;
+
+// $alert-color: #f04124;
+// $success-color: #43AC6A;
+// $warning-color: #f08a24;
+$info-color: #ABCCC7;
+
+
+// Background color for the top bar
+$topbar-bg-color: #6f6f6f;
+
+
+@import "foundation";
+
+body {
+	background: url(/imgs/fabric_plaid.png);
+}
+
+.about-panel img {
+	border: 5px solid $secondary-color;
+	margin-top: 1em;
+}
+
+.site-footer {
+	min-height: 10em;
+	background: $secondary-color;
+	border-top: 5px solid #96AB9E;
+	padding: 2em 0;
+	color: white;
+	h5 {
+		color: inherit;
+	}
+}
+
+.container {
+	border-top: 5px solid #96AB9E;
+	margin-bottom: 2em;
+}
+
+.toplinks {
+	border-top: 5px solid #CE736F;
+}
