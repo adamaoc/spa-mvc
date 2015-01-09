@@ -1,13 +1,9 @@
-MVC Ampnet
+MVC Amanda's Spa
 ============
 
-This is the ampnetmedia.com website built using my PHP MVC Stub.
+This is the front end MVC for Amanda's Spa
+
+[http://amandaholtzinger.com](amandaholtzinger.com)
 
 
 ### TODO:
-
-* Add RSS support for blog and works section
-* automate an image compression task
-* Add more coolness and interactivity
-* add an affiliates page of some sort
-* Continue to look at page speed 
