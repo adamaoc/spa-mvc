@@ -11,6 +11,7 @@
 			<div class="panel about-panel row">
 				<div class="small-12 medium-4 columns">
 					<img src="<?= $data['about']['thumb']; ?>" alt="About <?= SITENAME ?>" />
+					<p>Call me: <?= SITEPHONE ?></p>
 				</div>
 				<div class="small-12 medium-8 columns">
 					<?= $data['about']['content']; ?>

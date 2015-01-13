@@ -4,7 +4,7 @@ class ProductsModel
 {
 	public function getProducts($apislug)
 	{
-		$api = 'http://flexhub.ampnetmedia.com/api/'.$apislug.'/api/get_category_posts/?category_slug=product';
+		$api = $apislug.'get_category_posts&category_slug=product';
 
 		$data = json_decode(file_get_contents($api));
 
@@ -17,7 +17,8 @@ class ProductsModel
 
 	public function getTopProducts($apislug, $startnum, $endnum) 
 	{
-		$api = 'http://flexhub.ampnetmedia.com/api/'.$apislug.'/api/get_category_posts/?category_slug=top-product';
+		//http://flexhub.amandaholtzinger.com/?json=get_category_posts&slug=top-product
+		$api = $apislug.'get_category_posts&slug=top-product';
 
 		$data = json_decode(file_get_contents($api), true);
 		
