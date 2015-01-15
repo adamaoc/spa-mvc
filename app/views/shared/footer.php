@@ -1,17 +1,22 @@
 <footer class="site-footer">
-	<nav class="footer-nav">
-		<?php getComponent("footer_links", $data); ?>
-	</nav>
-	<p><small>all rights reserved &copy;<?= date('Y'); ?> ampnetmedia - Dallas, Texas web development</small></p>
-</footer>  
-
-	<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <div class="row">
+    <div class="small-12 medium-4 columns">
+      <h5>Footer Section</h5>
+    </div>
+    <div class="small-12 medium-4 columns">
+      <h5>Footer Section</h5>
+    </div>
+    <div class="small-12 medium-4 columns">
+      <h5>Footer Section</h5>
+    </div>
+  </div>
+</footer>
 
 	<script src="/assets/js/main.js"></script>
 
         <script>
 			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-9674179-2']);
+			_gaq.push(['_setAccount', 'UA-CODE-HERE']);
 			_gaq.push(['_trackPageview']);
 
 			(function() {

@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <title><?= SITENAME ?></title>
+        <title><?= $data['pagename'] ?> | <?= SITENAME ?></title>
         
         <meta name="description" content="More about Amanda Holtzinger and her Massage and Spa Services and Products.">
         
@@ -37,7 +37,7 @@
 
 		    <ul class="title-area">
 		        <li class="name">
-		            <h1><a href="#"><?= SITENAME ?></a></h1>
+		            <h1><a href="/"><?= SITENAME ?></a></h1>
 		        </li>
 		        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 		        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -47,6 +47,13 @@
 
 	            <!-- Right Nav Section -->
 	            <ul class="right">
+	            	<?php foreach ($data['sitenav'] as $nav) : ?>
+	            		<li>
+		            		<a href="/<?= $nav['url'] ?>">
+		            			<?= $nav['pagename'] ?>
+		            		</a>
+	            		</li>
+	            	<?php endforeach; ?>
 	                <?php 
 	                // <li class="active"><a href="#">Right Button Active</a></li>
 	                // <li class="has-dropdown">
@@ -56,13 +63,6 @@
 	                //     <li class="active"><a href="#">Active link in dropdown</a></li>
 	                //   </ul>
 	                // </li>
-	                ?>
-	            </ul>
-
-	            <!-- Left Nav Section -->
-	            <ul class="left">
-	                <?php
-	                //<li><a href="#">Left Nav Button</a></li>
 	                ?>
 	            </ul>
 	        </section>

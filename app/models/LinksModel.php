@@ -2,57 +2,28 @@
 
 class LinksModel
 {
-	public $dataroot = "data/pages/";
-	public $socialdata = "social-data.json";
-	public $sitelinkdata = "site-links.json";
-
-	public function footerLinks()
-	{
-		$links = array();
-		
-		$links['social'] = $this->getSocialLinks();
-		$links['site'] = $this->getSiteLinks();
-
-		return $links;
-	}
-
-	public function getSocialLinks()
-	{
-		$data = file_get_contents($this->dataroot.$this->socialdata);
-		$data = json_decode($data);
-
-		$socialdata = $data->socialData;
-
-		$links = array();
-
-		foreach ($socialdata as $link) {
-			$links[] = array(
-				"slug" => $link->slug,
-				"title" => $link->title,
-				"url" => $link->link,
-				"target" => "_blank"
-			);
-		}
-
-		return $links;
-	}
 
 	public function getSiteLinks()
 	{
-		$data = file_get_contents($this->dataroot.$this->sitelinkdata);
-		$data = json_decode($data);
+		//http://flexhub.amandaholtzinger.com/?json=get_page_index
+		$api = APISLUG.'get_page_index';
 
-		$sitelinks = $data->siteLinks;
+		// $data = json_decode(file_get_contents($api));
+		$data = getData($api);
+
+		$sitelinks = $data['pages'];
 
 		$links = array();
 
 		foreach ($sitelinks as $link) {
-			$links[] = array(
-				"slug" => $link->slug,
-				"pagename" => $link->pagename,
-				"url" => $link->link,
-				"target" => $link->target
-			);
+			if($link['slug'] !== "website") 
+			{
+				$links[] = array(
+					"slug" => $link['slug'],
+					"pagename" => $link['title'],
+					"url" => $link['slug']
+				);
+			}
 		}
 
 		return $links;

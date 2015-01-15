@@ -1,23 +1,22 @@
-<?php getHeader(array("nav" => $data['sitenav'], "headerdata" => $data['headerdata'])); ?>
-
-<?php getComponent("pageheader", $data['pageheader']); ?>
-<section class="main-about">
-	<div class="container">
-		
-		<blockquote>
-			<?= $data['about-text'] ?>
-		</blockquote>
-
-		<h2>specialties</h2>
-		<?php getComponent("specialties_block", $data['specialties']); ?>
-		
-		<h2>more about me</h2>
-		<?php getComponent("moreabout", $data['moreaboutText']); ?>
-
-		<?php getComponent('social_list', $data['social-data']); ?>
+<div class="row">
+  <div class="large-12 columns">
+    <h1><?= $data['about']['title'] ?> <small><?= SITENAME ?></small></h1>
+  </div>
+</div>
+    
+<div class="row container">
+	<div class="large-12 columns">
+		<div class="panel about-panel row">
+			<div class="small-12 medium-4 columns">
+				<img src="<?= $data['about']['thumb']; ?>" alt="About <?= SITENAME ?>" />
+				<p>Call me: <?= SITEPHONE ?></p>
+			</div>
+			<div class="small-12 medium-8 columns">
+				<?= $data['about']['content']; ?>
+			</div>
+		</div>
 	</div>
-</section>
+</div>
 
-<?php getComponent("besection", $data['bedata']); ?>
 
-<?php getFooter($data['footerdata']); ?>
+<?php getComponent('top_products', $data['products']); ?>

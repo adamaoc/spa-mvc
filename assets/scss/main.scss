@@ -21,6 +21,12 @@ body {
 	background: url(http://flexhub.amandaholtzinger.com/wp-content/uploads/2015/01/fabric_plaid.png);
 }
 
+
+h1 small {
+	display: block;
+	line-height: 1.3;
+}
+
 .about-panel img {
 	border: 5px solid $secondary-color;
 	margin-top: 1em;
