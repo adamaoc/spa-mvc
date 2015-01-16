@@ -3,12 +3,21 @@
 class Products extends Controller 
 {
 
+	public $Products = '';
+	public $startNum = 0;
+	public $endNum = 6;
+
+	public function __construct()
+	{
+		$this->Products = $this->model('ProductsModel');
+	}
+
 	public function index()
 	{
 		$modelProducts = $this->model('ProductsModel');
 		$modelLinks = $this->model('LinksModel');
 
-		$products = $modelProducts->getProducts();
+		$products = $modelProducts->getProducts($this->startNum, $this->endNum);
 		$categories = $modelProducts->getCategories();
 		$sitelinks = $modelLinks->getSiteLinks();
 
@@ -46,6 +55,17 @@ class Products extends Controller
 			"headerdata" => $headerdata,
 			"product" => $pagedata
 		));
+	}
+
+	public function page($id = 1)
+	{
+		$pageCount = $this->Products->productCount();
+
+		$this->startNum = $id * 2; // 2*6 = 12 -6 = 6
+		$this->endNum = $id * 2; // 2*6 = 12 3*6=18 
+
+		var_dump($pageCount);
+		die;
 	}
 
 	public function category($slug = '')

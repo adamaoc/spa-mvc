@@ -2,16 +2,29 @@
 
 class ProductsModel
 {
-	public function getProducts()
+	public function getProducts($startnum, $endnum)
 	{
 		//flexhub.amandaholtzinger.com/?json=
 		$api = APISLUG.'get_category_posts&category_slug=product';
 
 		$products = getData($api);
 
-		$products = $this->listProducts($products, 0, 6);
+		$products = $this->listProducts($products, $startnum, $endnum);
 
 		return $products;
+	}
+
+	public function productCount()
+	{
+		//flexhub.amandaholtzinger.com/?json=
+		$api = APISLUG.'get_category_posts&category_slug=product';
+
+		$products = getData($api);
+
+		$count = count($products['posts']);
+
+		return $count;
+
 	}
 
 	public function getProduct($slug)

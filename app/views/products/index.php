@@ -13,6 +13,8 @@
 			<?php endforeach; ?>
 		</ul>
 	</div>
+
+
 	<ul class="small-block-grid-3">
 	<?php foreach ($data['products'] as $product) : ?>
 		<li class="">
@@ -31,5 +33,8 @@
 		</li>
 	<?php endforeach; ?>
 	</ul>
+
+
+	<?php //getComponent("pagination", array($data['prevpage'], $data['nextpage'], 'blog', $data['maxpagecount'])); ?>
 </div>
 		
