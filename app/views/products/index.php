@@ -3,8 +3,19 @@
 		<h1><?= $data['pagetitle'] ?></h1>
 	</div>
 
+	<div class="small-12 columns">
+		<ul class="inline-list catlist">
+			<li><h3 class="">Categories</h3></li>
+			<?php foreach ($data['categories'] as $cat) : ?>
+				<li class="catlink">
+					<a href="/products/category/<?= $cat ?>"><?= $cat ?></a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+	</div>
+	<ul class="small-block-grid-3">
 	<?php foreach ($data['products'] as $product) : ?>
-		<div class="small-12 medium-4 columns">
+		<li class="">
 			<div class="panel toplinks">
 				<h4><?= $product['title']; ?></h4>
 				
@@ -15,9 +26,10 @@
 				<?php endif; ?>
 			
 				<?= $product['excerpt']; ?>
-				<a href="/products/product/<?= $product['slug']; ?>" class="small button">Go to Product</a>          
+				<a href="/products/product/<?= $product['slug']; ?>" class="small button expand">Go to Product</a>          
 			</div>
-		</div>
+		</li>
 	<?php endforeach; ?>
+	</ul>
 </div>
 		

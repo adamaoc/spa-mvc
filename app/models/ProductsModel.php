@@ -50,7 +50,9 @@ class ProductsModel
 		$catarr = array();
 
 		foreach ($data as $cat) {
-			$catarr[] = $cat['slug'];
+			if($cat['slug'] !== "product") {
+				$catarr[] = $cat['slug'];	
+			}
 		}
 
 		return $catarr;

@@ -22,7 +22,7 @@ class Controller
 
 		// get site footer -
 		// - must be in the views/shared folder named footer.php
-		getFooter();
+		getFooter($data['headerdata']);
 	}
 
 	public function helper($helper)

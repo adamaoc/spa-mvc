@@ -1,15 +1,32 @@
+</main> <?php // opened in the header ?>
+
 <footer class="site-footer">
-  <div class="row">
-    <div class="small-12 medium-4 columns">
-      <h5>Footer Section</h5>
-    </div>
-    <div class="small-12 medium-4 columns">
-      <h5>Footer Section</h5>
-    </div>
-    <div class="small-12 medium-4 columns">
-      <h5>Footer Section</h5>
-    </div>
-  </div>
+	<div class="row">
+		<div class="small-12 medium-4 columns">
+			<h5>Site Navigation</h5>
+			<ul>
+				<?php foreach ($data['sitenav'] as $nav) : ?>
+				<li>
+					<a href="/<?= $nav['url'] ?>">
+						<?= $nav['pagename'] ?>
+					</a>
+				</li>
+      			<?php endforeach; ?>
+      		</ul>
+    	</div>
+    	
+    	<div class="small-12 medium-4 columns">
+      		<h5>Footer Section</h5>
+    	</div>
+    	
+    	<div class="small-12 medium-4 columns">
+      		<h5>Footer Section</h5>
+    	</div>
+  	</div>
+
+  	<div class="small-12 columns copywrap">
+  		<p class="copy"><small>Site designed and developed by <a href="http://ampnetmedia.com">ampnet(media)</a> | &copy; 2015 Amanda Holtzinger | all rights reserved</small></p>
+  	</div>
 </footer>
 
 	<script src="/assets/js/main.js"></script>

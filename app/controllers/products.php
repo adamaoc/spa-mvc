@@ -9,6 +9,7 @@ class Products extends Controller
 		$modelLinks = $this->model('LinksModel');
 
 		$products = $modelProducts->getProducts();
+		$categories = $modelProducts->getCategories();
 		$sitelinks = $modelLinks->getSiteLinks();
 
 		$pagetitle = "All Products";
@@ -21,6 +22,7 @@ class Products extends Controller
 		$this->view('products/index', array(
 			"products" => $products,
 			"headerdata" => $headerdata,
+			"categories" => $categories,
 			"pagetitle" => $pagetitle
 		));
 	}
@@ -54,6 +56,7 @@ class Products extends Controller
 		$modelLinks = $this->model('LinksModel');
 
 		$sitelinks = $modelLinks->getSiteLinks();
+		$categories = $modelProducts->getCategories();
 
 		$headerdata = array(
 			"pagename" => "Products",
@@ -69,6 +72,7 @@ class Products extends Controller
 			$this->view('products/index', array(
 				"products" => $products,
 				"headerdata" => $headerdata,
+				"categories" => $categories,
 				"pagetitle" => $pagetitle
 			));
 		}else{
