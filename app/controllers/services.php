@@ -92,7 +92,7 @@ class Services extends Controller
 
 			$products = $this->Products->getProductsCat($slug, $this->startNum, $this->endNum);
 
-			$pagetitle = "All Products in Category ".$slug;
+			$pagetitle = "All Services in Category ".$slug;
 
 			$pagination = array(
 				"totalPages" => $this->totalPages,
