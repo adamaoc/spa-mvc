@@ -1,12 +1,12 @@
 <?php
 
-class Products extends Controller 
+class Services extends Controller 
 {
 
 	public $Products = '';
-	public $ProductType = 'product';
-	public $SectionSlug = 'product';
-	public $catID = 2;
+	public $ProductType = 'service';
+	public $SectionSlug = 'service';
+	public $catID = 7;
 	public $Cats = '';
 
 	public $Links = '';
@@ -54,10 +54,10 @@ class Products extends Controller
 			"currentPage" => $this->currentPage
 		);
 
-		$pagetitle = "All Products";
+		$pagetitle = "All Services";
 
 		$headerdata = array(
-			"pagename" => "Products",
+			"pagename" => "Services",
 			"sitenav" => $this->Links
 		);
 
@@ -76,7 +76,7 @@ class Products extends Controller
 		$categories = $this->Cats;
 
 		$headerdata = array(
-			"pagename" => "Products",
+			"pagename" => "Service",
 			"sitenav" => $this->Links
 		);
 		

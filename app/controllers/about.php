@@ -9,7 +9,7 @@ class About extends Controller
 		$modelLinks = $this->model('LinksModel');
 
 		$about = $modelAbout->getAbout(APISLUG);
-		$products = $modelProducts->getTopProducts(APISLUG, 0, 3);
+		$products = $modelProducts->getTopProducts(0, 3);
 		$sitelinks = $modelLinks->getSiteLinks();
 
 		$pagetitle = $about['title'];

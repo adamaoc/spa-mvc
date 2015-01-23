@@ -8,7 +8,7 @@
 			<li><h3 class="">Categories</h3></li>
 			<?php foreach ($data['categories'] as $cat) : ?>
 				<li class="catlink">
-					<a href="/products/category/<?= $cat ?>"><?= $cat ?></a>
+					<a href="/<?= $data['sectionslug'] ?>s/category/<?= $cat ?>/"><?= $cat ?></a>
 				</li>
 			<?php endforeach; ?>
 		</ul>
@@ -27,14 +27,14 @@
 				</div>		
 				<?php endif; ?>
 			
-				<?= $product['excerpt']; ?>
-				<a href="/products/product/<?= $product['slug']; ?>" class="small button expand">Go to Product</a>          
+				
+				<a href="/<?= $data['sectionslug'] ?>/<?= $product['slug']; ?>/" class="small button expand">Learn more</a>          
 			</div>
 		</li>
 	<?php endforeach; ?>
 	</ul>
 
-
-	<?php //getComponent("pagination", array($data['prevpage'], $data['nextpage'], 'blog', $data['maxpagecount'])); ?>
+	
+	<?php getComponent("pagination", array($data['pagination'])); ?>
 </div>
 		

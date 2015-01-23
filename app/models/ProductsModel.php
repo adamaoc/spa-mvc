@@ -2,10 +2,10 @@
 
 class ProductsModel
 {
-	public function getProducts($startnum, $endnum)
+	public function getProducts($slug, $startnum, $endnum)
 	{
 		//flexhub.amandaholtzinger.com/?json=
-		$api = APISLUG.'get_category_posts&category_slug=product';
+		$api = APISLUG.'get_category_posts&category_slug='.$slug;
 
 		$products = getData($api);
 
@@ -14,10 +14,10 @@ class ProductsModel
 		return $products;
 	}
 
-	public function productCount()
+	public function productCount($slug)
 	{
 		//flexhub.amandaholtzinger.com/?json=
-		$api = APISLUG.'get_category_posts&category_slug=product';
+		$api = APISLUG.'get_category_posts&category_slug='.$slug;
 
 		$products = getData($api);
 
@@ -25,6 +25,17 @@ class ProductsModel
 
 		return $count;
 
+	}
+
+	public function productCatCount($slug)
+	{
+		$api = APISLUG.'get_category_posts&slug='.$slug;
+
+		$products = getData($api);
+
+		$count = count($products['posts']);
+
+		return $count;
 	}
 
 	public function getProduct($slug)
@@ -37,10 +48,10 @@ class ProductsModel
 		return $data;
 	}
 
-	public function getTopProducts($apislug, $startnum, $endnum) 
+	public function getTopProducts($startnum, $endnum) 
 	{
 		//flexhub.amandaholtzinger.com/?json=get_category_posts&slug=top-product
-		$api = $apislug.'get_category_posts&slug=top-product';
+		$api = APISLUG.'get_category_posts&slug=top-product';
 
 		$data = getData($api);
 		
@@ -53,7 +64,7 @@ class ProductsModel
 		return $products;
 	}
 
-	public function getCategories()
+	public function getCategories($catID)
 	{
 		//flexhub.amandaholtzinger.com/?json=get_category_index
 		$api = APISLUG.'get_category_index';
@@ -62,12 +73,13 @@ class ProductsModel
 
 		$catarr = array();
 
+		$prodCats = $catID;
+
 		foreach ($data as $cat) {
-			if($cat['slug'] !== "product") {
+			if($cat['parent'] == $prodCats) {
 				$catarr[] = $cat['slug'];	
 			}
 		}
-
 		return $catarr;
 	}
 
@@ -85,6 +97,7 @@ class ProductsModel
 
 	public function listProducts($data, $startnum, $endnum)
 	{
+		$startnum = $startnum - 1;
 		$datacount = count($data['posts']);
 		if($endnum > $datacount) {
 			$endnum = $datacount;

@@ -49,7 +49,7 @@
 	            <ul class="right">
 	            	<?php foreach ($data['sitenav'] as $nav) : ?>
 	            		<li>
-		            		<a href="/<?= $nav['url'] ?>">
+		            		<a href="/<?= $nav['url'] ?>/">
 		            			<?= $nav['pagename'] ?>
 		            		</a>
 	            		</li>
