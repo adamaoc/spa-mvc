@@ -5,23 +5,19 @@
 
         <title><?= $data['pagename'] ?> | <?= SITENAME ?></title>
         
-        <meta name="description" content="More about Amanda Holtzinger and her Massage and Spa Services and Products.">
+        <meta name="description" content="More about Amanda Holtzinger and her Massage and Spa Services and Products. <?= $data['pagename'] ?> | <?= SITENAME ?>">
         
         <meta name="author" content="ampnetmedia.com">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="shortcut icon" href="/assets/img/favicon.ico">
-
-        <meta name="google-site-verification" content="GOOGLE SITE VERIFICATION" />
-        <meta name="msvalidate.01" content="MSVALIDATE" />
+        <meta name="google-site-verification" content="RE_JaVcfwCfhbUSCzZkBzajDm-K3JGL_dP9cpy2EuI4" />
+        
+        <meta name="msvalidate.01" content="B038142E19DDC9427F7BB86F8022EE9C" />
 
         <link rel="stylesheet" href="/assets/css/main.css">
 
-        <link rel="apple-touch-icon" href="/assets/img/touch-icon-iphone.png" />
-        <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/touch-icon-ipad.png" />
-        <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/touch-icon-iphone-retina.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/touch-icon-ipad-retina.png" />
+        <?php getComponent('favicons'); ?>
 
         <meta property="twitter:account_id" content="TWITTER ACC" />
 
