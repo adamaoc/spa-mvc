@@ -12,6 +12,11 @@
 					</a>
 				</li>
       			<?php endforeach; ?>
+      			<li>
+      			<a href="/sitemap/">
+      				Sitemap
+      			</a>
+      			</li>
       		</ul>
     	</div>
     	
