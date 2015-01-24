@@ -12,14 +12,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="google-site-verification" content="RE_JaVcfwCfhbUSCzZkBzajDm-K3JGL_dP9cpy2EuI4" />
-        
+
         <meta name="msvalidate.01" content="B038142E19DDC9427F7BB86F8022EE9C" />
 
         <link rel="stylesheet" href="/assets/css/main.css">
 
         <?php getComponent('favicons'); ?>
-
-        <meta property="twitter:account_id" content="TWITTER ACC" />
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
 
@@ -45,7 +43,7 @@
 	            <ul class="right">
 	            	<?php foreach ($data['sitenav'] as $nav) : ?>
 	            		<li>
-		            		<a href="/<?= $nav['url'] ?>/">
+		            		<a href="<?= $nav['url'] ?>">
 		            			<?= $nav['pagename'] ?>
 		            		</a>
 	            		</li>

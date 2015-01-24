@@ -3,25 +3,41 @@
 class Sitemap extends Controller 
 {
 	public $pages = '';
+	public $Links = '';
+	public $Products = array();
+	public $Services = array();
 
 	public function __construct() 
 	{
+		$links = $this->model('LinksModel');
+		$this->Links = $links->getSiteLinks();
 
-		$linksdata = $this->model('LinksModel');
-		$blogs = $this->model('BlogModel');
-		$works = $this->model('WorksModel');
-		$locals = $this->model('LocalsModel');
+		$model = $this->model('ProductsModel');
+		// pull in all product pages
+		$products = $model->getAll('product');
+		foreach ($products['posts'] as $key => $product) {
+			$this->Products[] = array(
+				"pagename" => $product['title'],
+				"slug" => $product['slug'],
+				"url" => "/product/".$product['slug']."/"
+			);
+		}
 
-		$sitenav = $linksdata->getSiteLinks();
-		$bloglist = $blogs->getAllPosts();
-		$worklist = $works->getAllPosts();
-		$locallist = $locals->legacyLocals();
+		// pull in all service pages
+		$services = $model->getAll('service');
+		foreach ($services['posts'] as $key => $service) {
+			$this->Services[] = array(
+				"pagename" => $service['title'],
+				"slug" => $service['slug'],
+				"url" => "/service/".$service['slug']."/"
+			);
+		}
 
+		// build pages array
 		$pages = array(
-			"mainlinks" => $sitenav,
-			"bloglist" => $bloglist,
-			"worklist" => $worklist,
-			"locallist" => $locallist
+			"Pages" => $this->Links,
+			"Products" => $this->Products,
+			"Services" => $this->Services
 		);
 
 		$this->pages = $pages;
@@ -29,29 +45,14 @@ class Sitemap extends Controller
 
 	public function index()
 	{
-		$linksdata = $this->model('LinksModel');
-		$sitenav = $linksdata->getSiteLinks();
-		$footerdata = $linksdata->footerLinks();
-
-		$pages = $this->pages;
-
 		$headerdata = array(
-			"title" => "Sitemap | Explore ampnetmedia from our easily accessable Site Map.",
-			"description" => "This is the Sitemap for ampnet media."
+			"pagename" => "Sitemap",
+			"sitenav" => $this->Links
 		);
 
-		$pageheader = array(
-			"title" => "Sitemap", 
-			"class" => "page-header", 
-			"subtitle" => "<small>ampnet(<span>media</span>)</small>", 
-			"heroimg" => "background-image: url(/assets/img/baseballfield-header-lg.jpg);"
-		);
 		$this->view('sitemap/index', array(
-			'headerdata' => $headerdata,
-			'sitenav' => $sitenav,
-			'pageheader' => $pageheader,
-			'footerdata' => $footerdata,
-			"pages" => $pages
+			"headerdata" => $headerdata,
+			"pages" => $this->pages
 		));
 	}
 
@@ -59,7 +60,7 @@ class Sitemap extends Controller
 	{
 		$pages = $this->pages;
 
-		$this->view('sitemap/xml', array(
+		$this->specialView('sitemap/xml', array(
 			"pages" => $pages
 		));
 	}

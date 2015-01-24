@@ -1,38 +1,26 @@
-<?php getHeader(array("nav" => $data['sitenav'], "headerdata" => $data['headerdata'])); ?>
+<div class="row">
+  <div class="large-12 columns">
+    <h1><?= $data['headerdata']['pagename'] ?> <small><?= SITENAME ?></small></h1>
+  </div>
+</div>
+    
+<div class="row container">
+	<div class="large-12 columns">
+	
+		<?php foreach ($data['pages'] as $key => $pages) : ?>
+			<h2><?= $key ?></h2>
+			<ul>
+				<?php foreach ($pages as $page) : ?>
+					<li>
+						<a href="<?= $page['url'] ?>">
+							<?= $page['pagename'] ?>
+						</a>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+		<?php endforeach; ?>
 
-<?php getComponent("pageheader", $data['pageheader']); ?>
-<section class="main-sitemap">
-	<div class="container">
-		<h3>main Pages</h3>
-		<ul>
-		<?php foreach ($data['pages']['mainlinks'] as $link) : ?>
-			<li>
-				<a href="/<?= $link['slug'] ?>/">
-					<?= $link['pagename'] ?>
-				</a>
-			</li>
-		<?php endforeach; ?>
-		</ul>
-		<h3>Blog Posts</h3>
-		<ul>
-		<?php foreach ($data['pages']['bloglist'] as $link) : ?>
-			<li>
-				<a href="/blog/<?= $link['slug'] ?>/">
-					<?= $link['title'] ?>
-				</a>
-			</li>
-		<?php endforeach; ?>
-		</ul>
-		<h3>Works</h3>
-		<ul>
-		<?php foreach ($data['pages']['worklist'] as $link) : ?>
-			<li>
-				<a href="/work/<?= $link['slug'] ?>/">
-					<?= $link['title'] ?>
-				</a>
-			</li>
-		<?php endforeach; ?>
-		</ul>
 	</div>
-</section>
-<?php getFooter($data['footerdata']); ?>
+</div>
+
+

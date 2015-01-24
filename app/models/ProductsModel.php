@@ -2,6 +2,13 @@
 
 class ProductsModel
 {
+	public function getAll($slug)
+	{
+		$api = APISLUG.'get_category_posts&category_slug='.$slug;
+		$data = getData($api);
+
+		return $data;
+	}
 	public function getProducts($slug, $startnum, $endnum)
 	{
 		//flexhub.amandaholtzinger.com/?json=

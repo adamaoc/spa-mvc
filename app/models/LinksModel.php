@@ -21,7 +21,7 @@ class LinksModel
 				$links[] = array(
 					"slug" => $link['slug'],
 					"pagename" => $link['title'],
-					"url" => $link['slug']
+					"url" => "/".$link['slug']."/"
 				);
 			}
 		}

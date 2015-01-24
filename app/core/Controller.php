@@ -25,6 +25,12 @@ class Controller
 		getFooter($data['headerdata']);
 	}
 
+	public function specialView($view, $data = array())
+	{
+		$path = $_SERVER['DOCUMENT_ROOT'].'/app/views/'.$view.'.php';
+		require_once $path;
+	}
+
 	public function helper($helper)
 	{
 		$path = $_SERVER['DOCUMENT_ROOT'].'/app/helpers/'.$helper.'.php';

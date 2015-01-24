@@ -83,9 +83,23 @@ h1 small {
 	border-top: 5px solid $alert-color;
 	.img-wrap {
 		margin-bottom: 1em;
+		text-align: center;
 	}
 }
 
+.catlist {
+	li:first-child {
+		display: block;
+		width: 100%;	
+	}
+}
+@media #{$medium-up} { 
+	.catlist {
+		li:first-child {
+			width: auto;
+		}
+	}
+}
 .catlink {
 	line-height: 3;
 	position: relative;
