@@ -1,12 +1,19 @@
 .siteheader {
 	@include clearfix();
+	// display: -webkit-box;
+	// display: -moz-box;
+	// display: -ms-flexbox;
+	// display: -webkit-flex;
 	display: flex;
+
+	// -webkit-flex-flow: row wrap;
 	flex-flow: row wrap;
 	padding-bottom: 2em;
 }
 
 .h-phonebox, .h-location, .h-logo {
 	text-align: center;
+	// -webkit-flex-grow: 1;
 	flex-grow: 1;
 }
 
@@ -36,6 +43,7 @@
 }
 .h-logo {
 	order: 1;
+	-webkit-flex-grow: 2;
 	flex-grow: 2;
 	min-width: 100%;
 }

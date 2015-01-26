@@ -36,14 +36,28 @@ module.exports = function(grunt) {
         files: 'scss/**/*.scss',
         tasks: ['sass']
       }
+    },
+
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer-core')({browsers: 'last 1 version'}).postcss,
+          require('csswring').postcss
+        ]
+      },
+      dist: {
+        src: 'css/*.css'
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-postcss');
 
-  grunt.registerTask('build', ['sass', 'uglify']);
+  grunt.registerTask('build', ['sass', 'postcss', 'uglify']);
   
   grunt.registerTask('default', ['build']);
 }
