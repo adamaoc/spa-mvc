@@ -33,9 +33,9 @@
   		<p class="copy"><small>Site designed and developed by <a href="http://ampnetmedia.com">ampnet(media)</a> | &copy; 2015 Amanda Holtzinger | all rights reserved</small></p>
   	</div>
 </footer>
-
-	<script src="/assets/js/main.min.js"></script>
-
+<?php 
+//	<script src="/assets/js/main.min.js"></script>
+?>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
