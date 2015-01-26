@@ -1,0 +1,49 @@
+
+.toplinks {
+	border-top: 5px solid $alert-color;
+	.img-wrap {
+		margin-bottom: 1em;
+		text-align: center;
+	}
+}
+
+.catlist {
+	li:first-child {
+		display: block;
+		width: 100%;	
+	}
+}
+@media #{$medium-up} { 
+	.catlist {
+		li:first-child {
+			width: auto;
+		}
+	}
+}
+.catlink {
+	line-height: 3;
+	position: relative;
+	padding: 0 5px;
+	a {
+		text-transform: capitalize;
+	}
+	&:after {
+		content: "";
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 3px;
+		background: $alert-color;
+		transition: all 0.3s ease;
+		z-index: -1;
+	}
+	&:hover {
+		a {
+			color: white;
+		}
+		&:after {
+			height: 55px;
+		}
+	}
+}
