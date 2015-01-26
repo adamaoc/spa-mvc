@@ -1,9 +1,12 @@
 @import "foundation/settings";
 @import "functions";
 // Foundation color overrides //
-$primary-color: #96AB9E;
-// $primary-color: #C9D88C;
-$secondary-color: #6f6f6f;
+
+// $row-width: rem-calc(1200);
+
+
+$primary-color: #93BE3B;
+$secondary-color: #353535;
 
 $alert-color: #CE736F;
 // $success-color: #43AC6A;
@@ -21,7 +24,8 @@ $footer-hight: 18em;
 @import "foundation";
 
 body {
-	background: url(http://flexhub.amandaholtzinger.com/wp-content/uploads/2015/01/fabric_plaid.png);
+	// background: url(http://flexhub.amandaholtzinger.com/wp-content/uploads/2015/01/fabric_plaid.png);
+	background: #f9f9f9;
 }
 
 html, body {
@@ -35,15 +39,19 @@ h1 small {
 }
 
 .container {
-	border-top: 5px solid #96AB9E;
+	border-top: 5px solid $primary-color;
 	margin-bottom: 2em;
 }
 
-.about-panel img {
-	border: 5px solid $secondary-color;
-	margin-top: 1em;
+.about-panel {
+	img {
+		border: 5px solid $secondary-color;
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
 }
-
+@import "header";
+@import "sitenav";
 @import "prod-lists";
 
 @import "sticky-footer";

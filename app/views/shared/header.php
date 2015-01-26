@@ -26,40 +26,36 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+        <header class="siteheader">
+	        <div class="h-phonebox">
+	        	<p><strong>Phone:</strong></p>
+	        	<?php getComponent('phonenumber'); ?>
+	        </div>
+	        <div class="h-logo">
+		        <h1>
+		        	<a href="/">
+			        	<span>Amanda Holtzinger</span>
+			        	<small>Massage &amp; Spa</small>
+		        	</a>
+		        </h1>
+	        </div>
+	        <div class="h-location">
+	        	<p><strong>Location:</strong></p>
+	        	<p>Granbury, TX</p>
+	        </div>
+        </header>	
 
-        <nav class="top-bar" data-topbar role="navigation">
-
-		    <ul class="title-area">
-		        <li class="name">
-		            <h1><a href="/"><?= SITENAME ?></a></h1>
-		        </li>
-		        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-		        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-		    </ul>
-
-	    	<section class="top-bar-section">
-
-	            <!-- Right Nav Section -->
-	            <ul class="right">
-	            	<?php foreach ($data['sitenav'] as $nav) : ?>
-	            		<li>
-		            		<a href="<?= $nav['url'] ?>">
-		            			<?= $nav['pagename'] ?>
-		            		</a>
-	            		</li>
-	            	<?php endforeach; ?>
-	                <?php 
-	                // <li class="active"><a href="#">Right Button Active</a></li>
-	                // <li class="has-dropdown">
-	                //   <a href="#">Right Button Dropdown</a>
-	                //   <ul class="dropdown">
-	                //     <li><a href="#">First link in dropdown</a></li>
-	                //     <li class="active"><a href="#">Active link in dropdown</a></li>
-	                //   </ul>
-	                // </li>
-	                ?>
-	            </ul>
-	        </section>
-	    </nav>
+        <nav class="sitenav">
+        	<ul>
+        		<li class="homelink"><a href="/">Home</a></li>
+	        	<?php foreach ($data['sitenav'] as $nav) : ?>
+	        		<li>
+	            		<a href="<?= $nav['url'] ?>">
+	            			<?= $nav['pagename'] ?>
+	            		</a>
+	        		</li>
+	        	<?php endforeach; ?>
+	        </ul>
+        </nav>
 
 	    <main class="page-wrap">

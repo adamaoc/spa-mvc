@@ -1,0 +1,49 @@
+.siteheader {
+	@include clearfix();
+	display: flex;
+	flex-flow: row wrap;
+	padding-bottom: 2em;
+}
+
+.h-phonebox, .h-location, .h-logo {
+	text-align: center;
+	flex-grow: 1;
+}
+
+.h-logo {
+	flex-grow: 2;
+	h1 span {
+		display: block;
+		color: $primary-color;
+	}
+	h1 small {
+		font-size: 0.5em;
+		color: #999;
+		text-transform: uppercase;
+	}
+}
+
+.h-phonebox, .h-location {
+	padding-top: 1.7em;
+	p {
+		margin-bottom: 0.5em;
+	}
+}
+
+//flex order
+.h-phonebox, .h-location {
+	order: 2;
+}
+.h-logo {
+	order: 1;
+	flex-grow: 2;
+	min-width: 100%;
+}
+@media #{$medium-up} {
+	.h-phonebox, .h-location {
+		order: 1;
+	}
+	.h-logo {
+		min-width: 10em;
+	}
+}

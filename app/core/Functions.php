@@ -7,7 +7,7 @@ function getComponent($file, $data = array()) {
 
 	$filepath = $dirpath.$file.".php";
 
-	return require_once $filepath;
+	return require $filepath;
 
 }
 
