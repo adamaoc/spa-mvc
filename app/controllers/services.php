@@ -76,7 +76,7 @@ class Services extends Controller
 		$categories = $this->Cats;
 
 		$headerdata = array(
-			"pagename" => "Service",
+			"pagename" => "Service Category",
 			"sitenav" => $this->Links
 		);
 		

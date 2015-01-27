@@ -8,11 +8,11 @@
 	</div>
 </div>
 
-<div class="row">
-	<div class="large-4 columns">
+<div class="row single-product">
+	<div class="medium-4 columns img-wrap">
 		<img src="<?= $p['thumbnail_images']['medium']['url'] ?>" alt="<?= $p['title'] ?> | <?= SITENAME ?>" />
 	</div>
-	<div class="large-8 columns">
+	<div class="medium-8 columns details">
 		<?= $p['content'] ?>
 	</div>
 </div>

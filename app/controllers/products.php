@@ -76,7 +76,7 @@ class Products extends Controller
 		$categories = $this->Cats;
 
 		$headerdata = array(
-			"pagename" => "Products",
+			"pagename" => "Products Category",
 			"sitenav" => $this->Links
 		);
 		
