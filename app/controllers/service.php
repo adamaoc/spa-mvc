@@ -11,8 +11,10 @@ class Service extends Controller
 		$sitelinks = $modelLinks->getSiteLinks();
 		$product = $modelProducts->getProduct($slug);
 
+		$title = $product['post']['title'];
+
 		$headerdata = array(
-			"pagename" => "Product Name",
+			"pagename" => $title,
 			"sitenav" => $sitelinks
 		);
 
