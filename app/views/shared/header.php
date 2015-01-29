@@ -41,7 +41,7 @@
 	        </div>
 	        <div class="h-location">
 	        	<p><strong>Location:</strong></p>
-	        	<p>Granbury, TX</p>
+	        	<p><?= LOCATION ?></p>
 	        </div>
         </header>	
 
