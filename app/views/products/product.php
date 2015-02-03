@@ -1,4 +1,6 @@
-<?php $p = $data['product']['post']; ?>
+<?php $p = $data['product']['post']; 
+//var_dump($p);
+?>
 
 <div class="row">
 	<div class="large-12 columns">
@@ -13,6 +15,7 @@
 		<img src="<?= $p['thumbnail_images']['medium']['url'] ?>" alt="<?= $p['title'] ?> | <?= SITENAME ?>" />
 	</div>
 	<div class="medium-8 columns details">
+		<?php getComponent('pricing', $p); ?>
 		<?= $p['content'] ?>
 	</div>
 </div>

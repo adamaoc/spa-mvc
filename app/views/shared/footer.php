@@ -21,11 +21,16 @@
     	</div>
     	
     	<div class="small-12 medium-4 columns">
-      		<h5>Footer Section</h5>
+      		<?php //<h5>Footer Section</h5> ?>
     	</div>
     	
     	<div class="small-12 medium-4 columns">
-      		<h5>Footer Section</h5>
+      		<h5>Quick Contact:</h5>
+          <ul>
+            <li>Amanda Holtzinger</li>
+            <li><?php getComponent('phonenumber'); ?></li>
+            <li><?= LOCATION ?></li>
+          </ul>
     	</div>
   	</div>
 
