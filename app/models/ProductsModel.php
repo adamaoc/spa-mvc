@@ -61,7 +61,10 @@ class ProductsModel
 		$api = APISLUG.'get_category_posts&slug=top-product';
 
 		$data = getData($api);
-		
+
+		// TODO
+		// if the top product is also in another category use that for url
+
 		for($i = $startnum; $i < $endnum; ++$i) {
 			$productarr = $data['posts'][$i];
 			$formattedarr = $this->formatProduct($productarr);
