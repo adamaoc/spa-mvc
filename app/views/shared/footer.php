@@ -29,7 +29,10 @@
           <ul>
             <li>Amanda Holtzinger</li>
             <li><?php getComponent('phonenumber'); ?></li>
-            <li><?= LOCATION ?></li>
+            <li>
+              <span><?= ADDRESS ?></span>
+              <span><?= LOCATION ?></span>
+            </li>
           </ul>
     	</div>
   	</div>

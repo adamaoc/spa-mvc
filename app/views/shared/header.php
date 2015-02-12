@@ -41,7 +41,10 @@
 	        </div>
 	        <div class="h-location">
 	        	<p><strong>Location:</strong></p>
-	        	<p><?= LOCATION ?></p>
+	        	<p>
+	        		<span><?= ADDRESS ?></span>
+	        		<span><?= LOCATION ?></span>
+	        	</p>
 	        </div>
         </header>	
 

@@ -9,3 +9,4 @@ define("SITENAME", $webdata['page']['custom_fields']['website_title'][0]);
 define("SITEPHONE", $webdata['page']['custom_fields']['contact_phone_number'][0]);
 define("SITETAGLINE", $webdata['page']['custom_fields']['tag_line'][0]);
 define("LOCATION", $webdata['page']['custom_fields']['location'][0]);
+define("ADDRESS", $webdata['page']['custom_fields']['address'][0]);

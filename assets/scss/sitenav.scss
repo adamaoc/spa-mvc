@@ -1,4 +1,9 @@
 .sitenav {
+	padding-top: 1em;
+	padding-bottom: .3em;
+	@media #{$medium-up} {
+		background: $alert-color;
+	}
 	ul {
 		max-width: $row-width;
 		list-style: none;
@@ -30,8 +35,8 @@
 			color: $secondary-color;
 			transition: all .3s ease;
 			padding: 0.3em 0.5em;
-				background: $alert-color;
-				color: #fff;
+			background: $alert-color;
+			color: #fff;
 
 			&:hover {
 				background: $primary-color;
@@ -40,7 +45,7 @@
 		}
 		@media #{$medium-up} {
 			a {
-				background: none;
+				background: white;
 				border: 3px solid $alert-color;
 				color: #999;
 			}
