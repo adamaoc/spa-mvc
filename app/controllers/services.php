@@ -82,6 +82,7 @@ class Services extends Controller
 		
 		if(in_array($slug, $categories)) 
 		{
+			// remove pagination from categories // 
 			$this->totalProducts = $this->Products->productCatCount($slug);
 			$this->totalPages = ceil($this->totalProducts / $this->productsPerPage);
 
@@ -90,7 +91,8 @@ class Services extends Controller
 			$this->startNum = $pagenums[0];
 			$this->endNum = $pagenums[1];
 
-			$products = $this->Products->getProductsCat($slug, $this->startNum, $this->endNum);
+			// $products = $this->Products->getProductsCat($slug, $this->startNum, $this->endNum);
+			$products = $this->Products->getProductsCat($slug, $this->startNum, $this->totalProducts);
 
 			$pagetitle = "All Services in Category ".$slug;
 
@@ -104,8 +106,7 @@ class Services extends Controller
 				"headerdata" => $headerdata,
 				"categories" => $categories,
 				"pagetitle" => $pagetitle,
-				"sectionslug" => $this->SectionSlug,
-				"pagination" => $pagination
+				"sectionslug" => $this->SectionSlug
 			));
 		}else{
 			$this->view('products/nonefound', array(
